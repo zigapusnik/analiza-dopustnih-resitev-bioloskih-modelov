@@ -720,7 +720,7 @@ def readData(filename):
 	print(i)   
 	return (np.array(results_space), np.array(results_cost), np.array(results_amp), np.array(results_per)) 
 
-	#performs PCA anylsis and plots the results
+#performs PCA anylsis and plots the results
 def plotPCA(data, project, labels):    
 	pca = decomposition.PCA(n_components=3)  
 	sc = preprocessing.StandardScaler() 
@@ -738,7 +738,7 @@ def plotPCA(data, project, labels):
 	ax.set_zlabel('GK 3')    	
 	plt.show() 
 
-#analyses given cluster 	
+#analyse given clusters	
 def analyseClusters(data_space, data_cost, data_amp, data_per, n_clusters, labels, solver):  
   
 	centers = []
@@ -828,7 +828,7 @@ if __name__ == "__main__":
 	solver = geneticSolver(repressilatorModel, np.array([0 , 100, 0, 0, 0, 0]), np.array(["transcription", "transcription", "hill", "translation", "rna_degradation", "protein_degradation", "Kd"]))	
 	results_rep_cost = -results_rep_cost
 	
-	#get optimal number of cluster
+	#get optimal number of clusters
 	elbow_method(results_rep_space)  
 	optimalK = gapStatistics(solver, results_rep_space) 
 	print(optimalK)  
